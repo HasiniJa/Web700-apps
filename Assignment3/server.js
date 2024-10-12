@@ -1,6 +1,6 @@
-var HTTP_PORT =process.env.PORT ||8080;
-var express = require("express");
-var app = express();
+const HTTP_PORT =process.env.PORT ||8080;
+const express = require('express');
+const app = express();
 const collegeData = require('./modules/collegeData');
 const path = require('path');
 
@@ -71,9 +71,11 @@ app.get('/tas',(req,res)=>{
 
 
 // Route to handle /student/num
-app.get('/student/:num', (req, res) => {
-    const studentNum = req.params.num; 
-    collegeData.getStudentByNumber(studentNum)
+app.get('/students/:num', (req, res) => {
+
+    const studentNum = req.params.num;
+
+    getStudentByNumber(studentNum)
         .then(student => {
             res.json(student); 
         })
