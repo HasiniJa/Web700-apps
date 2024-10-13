@@ -1,3 +1,14 @@
+/*********************************************************************************
+*  WEB700 – Assignment 03
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  No part 
+*  of this assignment has been copied manually or electronically from any other source 
+*  (including 3rd party web sites) or distributed to other students.
+* 
+*  Name: Hasini Jayasekara Student ID: 165513235 Date: 10/12/2024
+*
+********************************************************************************/ 
+
+
 const HTTP_PORT =process.env.PORT ||8080;
 const express = require('express');
 const app = express();
@@ -7,37 +18,41 @@ const path = require('path');
 // Middleware to serve static files
 app.use(express.static("views"));
 
-//Get Students route
 app.get('/students', (req, res) => {
-   
+    
     if (req.query.course) {
-        const course = parseInt(req.query.course);  
+        const course = parseInt(req.query.course);
+
         
         if (course >= 1 && course <= 7) {
-            
             collegeData.getStudentsByCourse(course)
                 .then((students) => {
-                   
-                    res.json(students);
+                    if (students.length > 0) {
+                        res.json(students); 
+                    } else {
+                        res.json({ message: "no results" }); 
+                    }
                 })
                 .catch((err) => {
-                    
-                    res.json({ message: "no results" });
+                    console.error('Error fetching students by course:', err); 
+                    res.json({ message: "no results" }); 
                 });
         } else {
-           
+          
             res.status(400).json({ message: "Invalid course value. Must be between 1 and 7." });
         }
     } else {
-       
+     
         collegeData.getAllStudents()
             .then((students) => {
-              
-                res.json(students);
+                if (students.length > 0) {
+                    res.json(students); 
+                    
+                }
             })
             .catch((err) => {
-               
-                res.json({ message: "no results" });
+                console.error('Error fetching all students:', err); 
+                res.json({ message: "no results" }); 
             });
     }
 });
@@ -70,23 +85,22 @@ app.get('/tas',(req,res)=>{
 });
 
 
-// Route to handle /student/num
 app.get('/students/:num', (req, res) => {
+    const Num = req.params.num;
 
-    const studentNum = req.params.num;
-
-    getStudentByNumber(studentNum)
-        .then(student => {
-            res.json(student); 
+    collegeData.getStudentByNumber(Num)
+        .then(students => {
+            console.log(students);  // Add this line to log the result
+            if (students) {
+                res.json(students);
+            } else {
+                res.json({ message: "no results" });
+            }
         })
         .catch(err => {
+            console.error('Error fetching student by number:', err);
             res.json({ message: "no results" });
         });
-});
-
-// Route for serving the home.html file
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views', 'home.html'));
 });
 
 // Route to serve the home.html file

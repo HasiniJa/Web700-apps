@@ -80,12 +80,15 @@ function getCourses() {
 
 function getStudentsByCourse(course) {
     return new Promise((resolve, reject) => {
+
         // Filter students by the specified course
+       
         const filteredStudents = dataCollection.students.filter(student => student.course === course);
 
         // Check if any students were found
         if (filteredStudents.length > 0) {
-            // Resolve with the filtered array
+            
+ 
             resolve(filteredStudents);
         } else {
             // Reject if no results are found
@@ -97,22 +100,23 @@ function getStudentsByCourse(course) {
 // get student by their student number function
 function getStudentByNumber(num) {
     return new Promise((resolve, reject) => {
-        // Check if num is a valid number
-        if (typeof num !== 'number') {
-            return reject("Invalid student number");
-        }
-
+       
         // Find the student
-        const student = dataCollection.students.find(student => student.studentNum === String(num));
+        const student = dataCollection.students.find(student => student.studentNum === IntParse(num));
 
-        // Check if a student was found
-        if (student) {
-            // Resolve with the found student object
+         // Check if any students were found
+         if (filteredStudents.length == 1) {
+            
+            resolve(filteredStudents);
+        } else {
+            // Reject if no results are found
+            reject("No results returned");
+        }
+        /*if (student) {        
             resolve(student);
         } else {
-            // Reject if no student is found
             reject(`No results returned for student number: ${num}`);
-        }
+        }*/
     });
 }
 
