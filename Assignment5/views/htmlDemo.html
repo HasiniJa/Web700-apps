@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>WEB700</title>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="/css/theme.css" type="text/css" />
+	</head>
+
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a class="navbar-brand" href="#">Hasini Jayasekara </a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+					<li class="nav-item active"><a class="nav-link" href="/htmlDemo">Html Demo</a></li>
+					<li class="nav-item"><a class="nav-link" href="/addstudent">Add Student</a></li>
+				</ul>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link" href="/students">Students</a></li>
+					<li class="nav-item"><a class="nav-link" href="/tas">Teaching Assistants</a></li>
+					<li class="nav-item"><a class="nav-link" href="/courses">Courses</a></li>
+				</ul>
+			</div>
+		</nav>
+
+		<div class="container">
+			<div class="row">
+				<main class="col-md-12">
+
+
+
+					 <!-- Tables Section -->
+					 <section>
+						<h2>Tables</h2>
+						<table>
+							<caption>Student Grades</caption>
+							<thead>
+								<tr>
+									<th>Student Name</th>
+									<th>Course</th>
+									<th>Grade</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>John Doe</td>
+									<td>Math</td>
+									<td>A</td>
+								</tr>
+								<tr>
+									<td>Jane Smith</td>
+									<td>Science</td>
+									<td>B</td>
+								</tr>
+								<tr>
+									<td rowspan="2">Sam Brown</td>
+									<td>History</td>
+									<td>C</td>
+								</tr>
+								<tr>
+									<td>Art</td>
+									<td colspan="2">A+</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th colspan="2">Average</th>
+									<th>B+</th>
+								</tr>
+							</tfoot>
+						</table>
+			
+						<table>
+							<caption>Course Schedule</caption>
+							<thead>
+								<tr>
+									<th>Course Code</th>
+									<th>Course Name</th>
+									<th>Instructor</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>101</td>
+									<td>Introduction to Programming</td>
+									<td>Mr. Smith</td>
+								</tr>
+								<tr>
+									<td>102</td>
+									<td>Web Development</td>
+									<td>Mrs. Johnson</td>
+								</tr>
+								<tr>
+									<td>103</td>
+									<td>Database Management</td>
+									<td>Dr. Lee</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th colspan="2">Total Courses</th>
+									<th>3</th>
+								</tr>
+							</tfoot>
+						</table>
+						<p>This section showcases tables displaying student grades and course schedules, 
+							demonstrating how to structure data effectively using HTML elements.</p>
+					</section>
+			
+					<!-- Lists Section -->
+					<section>
+						<h2>Lists</h2>
+						<ol>
+							<li>HTML Fundamentals
+								<ul>
+									<li>Elements</li>
+									<li>Attributes</li>
+									<li>Tags</li>
+								</ul>
+							</li>
+							<li>CSS Basics</li>
+							<li>JavaScript Essentials</li>
+							<li>Responsive Design</li>
+							<li>Web Accessibility</li>
+						</ol>
+						<p>This section provides a list of key topics in web development, along with a nested list that elaborates on HTML fundamentals.</p>
+					</section>
+			
+					<!-- Images Section -->
+					<section>
+						<h2>Images</h2>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Snowboarder in halfpipe" width="300">
+						<img src="https://wallup.net/wp-content/uploads/2019/09/945305-autumn-fall-season-nature-landscape-leaf-leaves-color-seasons-tree-forest.jpg" alt="Fall colors" width="300">
+						<img src="https://th.bing.com/th/id/R.ff48a83252fffe64b35fc2ab3c3e6073?rik=69yMTKUKBhWTFg&riu=http%3a%2f%2fwallup.net%2fwp-content%2fuploads%2f2016%2f01%2f262485-animals-nature-fox-wildlife-snow.jpg&ehk=dR38a3tJ1JeIq%2bqJyAKFEpz9y8kxD316njMZCDWb930%3d&risl=&pid=ImgRaw&r=0" alt="Fox in snow" width="300">
+						<p>This section features a collection of images, showcasing various subjects while ensuring each image has descriptive alt text for accessibility.</p>
+					</section>
+			
+					<!-- Audio Section -->
+					<section>
+						<h2>Audio</h2>
+						<audio controls>
+							<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.mp3" type="audio/mpeg">
+							<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-audio.ogg" type="audio/ogg">
+							Your browser does not support the audio element.
+						</audio>
+						<p>This section contains an audio player for users to listen to sample audio files, demonstrating HTML5's audio capabilities.</p>
+					</section>
+			
+					<!-- Video Section -->
+					<section>
+						<h2>Video</h2>
+						<video width="600" controls>
+							<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.mp4" type="video/mp4">
+							<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.ogg" type="video/ogg">
+							<source src="https://pat-crawford-sdds.netlify.app/shared/fall-2021/web700/A3/sample-video.webm" type="video/webm">
+							Your browser does not support the video tag.
+						</video>
+						<p>This section features a video player, allowing users to play sample videos and illustrating the use of HTML5 for video content.</p>
+					</section>
+				</main>
+			
+				<div class="footer">
+					<footer>
+						<p>&copy; 2024 Hasini Jayasekara. All rights reserved.</p>
+					</footer>
+				</div>
+				</main>
+			</div>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
