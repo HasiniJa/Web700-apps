@@ -6,8 +6,7 @@
 * 
 *  Name: Hasini Jayasekara Student ID: 165513235 Date: 11/02/2024
 *
-*  Online (Vercel) Link:https://vercel.com/hasini-jayasekaras-projects/assignment5
-*
+*  Online (Vercel) Link:
 ********************************************************************************/ 
  
 const HTTP_PORT = process.env.PORT || 8080;
@@ -150,38 +149,25 @@ app.post('/student/update', (req, res) => {
         });
 });
 
-// Generic route for dynamic pages like About, HTML Demo
-app.get('/:page', (req, res) => {
-    const page = req.params.page;
-    res.render('main', { title: page.charAt(0).toUpperCase() + page.slice(1) });
-});
-
-
 
 // Define routes
 app.get('/', (req, res) => {
-  res.render('main', { body: '<h1>Welcome to the Home Page</h1>', activeRoute: '/' });
+    res.render('main', { view: 'home' });
 });
 
 app.get('/about', (req, res) => {
-    res.render('about');
+    res.render('main', { view: 'about' });
 });
 
 app.get('/htmlDemo', (req, res) => {
-    res.render('htmlDemo');
+    res.render('main', { view: 'htmlDemo' });
 });
 
 app.get('/addstudent', (req, res) => {
-    res.render('addstudent');
+    res.render('main', { view: 'addstudent' });
 });
 
 
-app.get('/', (req, res) => {
-    res.render('main', {
-      body: 'This is the body content',
-      activeRoute: activeRoute
-    });
-  });
 
 // Initialize the data and start the server
 collegeData.initialize()
